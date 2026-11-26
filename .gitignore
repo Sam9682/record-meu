@@ -13,6 +13,7 @@ env/
 creds-*
 *.env
 .env*
+./creds/*
 
 # Generated recordings
 videos/

@@ -1,8 +1,0 @@
-def fcntl(fd, op, arg=0): return 0
-def ioctl(fd, op, arg=0): return 0
-def flock(fd, op, arg=0): return 0
-F_SETFL = 0
-F_GETFL = 0
-LOCK_EX = 0
-LOCK_UN = 0
-

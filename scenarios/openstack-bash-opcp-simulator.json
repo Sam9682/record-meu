@@ -50,7 +50,7 @@
     },
     {
       "type": "run",
-      "command": "source ./creds-openstack-simulator.sh",
+      "command": "source ./creds/creds-openstack-simulator.sh",
       "timeout": 300,
       "hide": false
     },

@@ -38,7 +38,7 @@
   "steps": [
     {
       "type": "run",
-      "command": ". .\\venv\\Scripts\\Activate.ps1; . .\\creds-openstack.ps1",
+      "command": ". .\\venv\\Scripts\\Activate.ps1; . .\\creds\\creds-openstack.ps1",
       "timeout": 300,
       "hide": true
     },
