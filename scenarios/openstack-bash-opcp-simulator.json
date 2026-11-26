@@ -1,0 +1,142 @@
+{
+  "target": {
+    "type": "bash",
+    "prompt": "slepetre@opcp:{cwd}$ ",
+    "url": "https://opcp-psmc.com/admin/opcp-openstack-simulator",
+    "input_selectors": [
+      "textarea",
+      "input[type=text]",
+      "input:not([type])",
+      "[contenteditable=true]"
+    ],
+    "send_selector": "",
+    "answer_selector": ".message.assistant",
+    "ignore_https_errors": true,
+    "cwd": ".",
+    "title": "bash - OPCP OpenStack simulator",
+    "font_size": 16,
+    "shell_exe": "wsl",
+    "wsl_distro": "Ubuntu-24.04",
+    "user": "slepetre",
+    "load_profile": true
+  },
+  "timing": {
+    "typing_delay_ms": 45,
+    "pause_after_step": 3,
+    "max_wait_per_answer": 120,
+    "answer_stable_for": 4,
+    "manual_timeout": 600
+  },
+  "output": {
+    "name": "demo-openstack-bash-opcp-simulator",
+    "width": 1280,
+    "height": 720,
+    "mp4": true,
+    "gif": true,
+    "gif_speed": 2.0,
+    "gif_fps": 10,
+    "gif_width": 960,
+    "delete_raw": true,
+    "browser_path": "C:\\Program Files\\Chromium\\Application\\chrome.exe"
+  },
+  "steps": [
+    {
+      "type": "title",
+      "text": "Hello ! Demonstration of OpenStack Simulator by OPCP PSMC",
+      "subtitle": "OPCP OpenStack simulator - opensource - github",
+      "seconds": 4,
+      "font_size": 64,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "source ./creds-openstack-simulator.sh",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack server list",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack server create --flavor m1.small --image ubuntu-22.04 my-server",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack network create my-network-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack volume create --size 10 my-volume",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node create --driver ipmi --name node-0000-0002 --resource-class CUSTOM_BAREMETAL",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node set --property memory_mb=8192 --property cpus=8 --property local-gb=100 node-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node list",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node show node-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node list",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node manage node-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node list",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node provide node-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack server create --flavor m1.small --image 'Debian 12 LVM OPCP' my-server-0000-0002",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "run",
+      "command": "openstack baremetal node list",
+      "timeout": 300,
+      "hide": false
+    }
+  ]
+}

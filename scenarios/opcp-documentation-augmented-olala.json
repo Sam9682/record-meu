@@ -1,0 +1,131 @@
+{
+  "target": {
+    "type": "web",
+    "url": "https://opcp-psmc.com:6124/document-adapter",
+    "answer_selector": "",
+    "ignore_https_errors": true,
+    "input_selectors": [
+      "textarea",
+      "input[type=text]",
+      "input:not([type])",
+      "[contenteditable=true]"
+    ],
+    "send_selector": "",
+    "cwd": ".",
+    "prompt": "",
+    "title": "",
+    "font_size": 16,
+    "shell_exe": "auto",
+    "wsl_distro": "",
+    "user": "",
+    "load_profile": false
+  },
+  "timing": {
+    "typing_delay_ms": 45,
+    "pause_after_step": 3,
+    "max_wait_per_answer": 120,
+    "answer_stable_for": 4,
+    "manual_timeout": 600
+  },
+  "output": {
+    "name": "opcp-documentation-augmented-olala",
+    "width": 1280,
+    "height": 720,
+    "mp4": true,
+    "gif": true,
+    "gif_speed": 2.0,
+    "gif_fps": 10,
+    "gif_width": 960,
+    "delete_raw": true,
+    "browser_path": "C:\\Program Files\\Chromium\\Application\\chrome.exe"
+  },
+  "steps": [
+    {
+      "type": "title",
+      "text": "Olala ! OPCP documentation augmented :)",
+      "subtitle": "Solution based on OVHShai Olala Agentic AI - opensource - github",
+      "seconds": 4,
+      "font_size": 64,
+      "hide": false
+    },
+    {
+      "type": "type",
+      "selector": "#email",
+      "text": "admin@opcp-psmc.com",
+      "secret": false,
+      "press_enter": false,
+      "hide": true
+    },
+    {
+      "type": "type",
+      "selector": "#password",
+      "text": "Admin1234!",
+      "secret": false,
+      "press_enter": true,
+      "hide": true
+    },
+    {
+      "type": "wait",
+      "seconds": 3,
+      "hide": true
+    },
+    {
+      "type": "goto",
+      "url": "https://opcp-psmc.com:6124/document-adapter",
+      "hide": true
+    },
+    {
+      "type": "click",
+      "selector": "button:text-is('EN')",
+      "wait_answer": false,
+      "hide": true
+    },
+    {
+      "type": "wait",
+      "seconds": 2,
+      "hide": false
+    },
+    {
+      "type": "select",
+      "selector": "select",
+      "option": "OPCP_Core_v9.pdf",
+      "hide": false
+    },
+    {
+      "type": "wait",
+      "seconds": 1.5,
+      "hide": false
+    },
+    {
+      "type": "click",
+      "selector": "label:has-text('IT beginner')",
+      "wait_answer": false,
+      "hide": false
+    },
+    {
+      "type": "wait",
+      "seconds": 1.5,
+      "hide": false
+    },
+    {
+      "type": "type",
+      "selector": "textarea",
+      "text": "I am a sale specialist so I am not an IT expert to understand network details. Generate a version for the OPCP_Core_c9.pdf so that a customer can easily understand, focus on soverainty",
+      "secret": false,
+      "press_enter": false,
+      "hide": false
+    },
+    {
+      "type": "click",
+      "selector": "button:has-text('Generate')",
+      "wait_answer": true,
+      "hide": false
+    },
+    {
+      "type": "scroll",
+      "selector": ".prose",
+      "seconds": 5,
+      "hide": false
+    }
+  ]
+}

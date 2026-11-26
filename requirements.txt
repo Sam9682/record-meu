@@ -1,0 +1,5 @@
+# Browser automation and video recording
+playwright>=1.40
+
+# Optional: bundled ffmpeg binary, used only when ffmpeg is not on PATH
+imageio-ffmpeg>=0.4

@@ -1,0 +1,67 @@
+{
+  "target": {
+    "type": "web",
+    "url": "https://opcp-psmc.com:6124/oracle",
+    "input_selectors": [
+      "textarea",
+      "input[type=text]",
+      "input:not([type])",
+      "[contenteditable=true]"
+    ],
+    "send_selector": "",
+    "answer_selector": ".message.assistant",
+    "ignore_https_errors": true,
+    "cwd": ".",
+    "prompt": "",
+    "title": "",
+    "font_size": 16
+  },
+  "timing": {
+    "typing_delay_ms": 45,
+    "pause_after_step": 3,
+    "max_wait_per_answer": 120,
+    "answer_stable_for": 4,
+    "manual_timeout": 600
+  },
+  "output": {
+    "name": "demo",
+    "width": 1280,
+    "height": 720,
+    "mp4": true,
+    "gif": true,
+    "gif_speed": 2.0,
+    "gif_fps": 10,
+    "gif_width": 960,
+    "delete_raw": true,
+    "browser_path": "C:\\Program Files\\Chromium\\Application\\chrome.exe"
+  },
+  "steps": [
+    {
+      "type": "manual",
+      "message": "Log in to the oracle in the browser window (the demo starts once the oracle page is loaded)",
+      "until": "url",
+      "value": "",
+      "hide": true
+    },
+    {
+      "type": "ask",
+      "text": "What is OVH OPCP?",
+      "hide": false
+    },
+    {
+      "type": "ask",
+      "text": "Is OVH OPCP based on OpenStack for the underlying layer ?",
+      "hide": false
+    },
+    {
+      "type": "ask",
+      "text": "Can you list the commands of OpenStack?",
+      "hide": false
+    },
+    {
+      "type": "ask",
+      "text": "Generate a paragraph to communicate on LinkedIn that this is an example of using OVH AI LLM on OVH tooling/OS on OVHcloud servers, a full first sovereign solution.",
+      "hide": false
+    }
+  ]
+}
