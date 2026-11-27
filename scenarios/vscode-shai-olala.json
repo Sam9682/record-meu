@@ -1,0 +1,98 @@
+{
+  "target": {
+    "type": "vscode",
+    "code_path": "auto",
+    "remote": "wsl",
+    "wsl_distro": "Ubuntu-24.04",
+    "folder": "/home/slepetre/workspace/github/record-meu",
+    "profile_dir": "vscode-demo-profile",
+    "uninstall_first": [
+      "shai-dev.shai-vscode"
+    ],
+    "input_selectors": [
+      "textarea#prompt",
+      "textarea"
+    ],
+    "send_selector": "",
+    "answer_selector": "",
+    "close_at_end": true
+  },
+  "timing": {
+    "typing_delay_ms": 60,
+    "pause_after_step": 3,
+    "max_wait_per_answer": 180,
+    "answer_stable_for": 5,
+    "manual_timeout": 600
+  },
+  "output": {
+    "name": "vscode-shai-olala",
+    "width": 1280,
+    "height": 720,
+    "mp4": true,
+    "gif": true,
+    "gif_speed": 2.0,
+    "gif_fps": 10,
+    "gif_width": 960,
+    "delete_raw": true
+  },
+  "steps": [
+    {
+      "type": "wait_for",
+      "selector": ".explorer-folders-view .monaco-list-row",
+      "timeout": 180,
+      "hide": true
+    },
+    {
+      "type": "wait",
+      "seconds": 2,
+      "hide": false
+    },
+    {
+      "type": "key",
+      "keys": "Control+Shift+X",
+      "hide": false
+    },
+    {
+      "type": "type",
+      "selector": "",
+      "text": "shai-dev",
+      "secret": false,
+      "press_enter": true,
+      "hide": false
+    },
+    {
+      "type": "wait_for",
+      "selector": ".extensions-viewlet .monaco-list-row .extension-action.install:visible",
+      "timeout": 60,
+      "hide": false
+    },
+    {
+      "type": "click",
+      "selector": ".extensions-viewlet .monaco-list-row .extension-action.install:visible",
+      "wait_answer": false,
+      "hide": false
+    },
+    {
+      "type": "wait_for",
+      "selector": ".part.activitybar [aria-label^=\"Shai Chat\"]",
+      "timeout": 300,
+      "hide": false
+    },
+    {
+      "type": "click",
+      "selector": ".part.activitybar [aria-label^=\"Shai Chat\"]",
+      "wait_answer": false,
+      "hide": false
+    },
+    {
+      "type": "ask",
+      "text": "hello",
+      "hide": false
+    },
+    {
+      "type": "ask",
+      "text": "list all files in the current folder",
+      "hide": false
+    }
+  ]
+}

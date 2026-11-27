@@ -1,0 +1,14 @@
+{
+  "security.workspace.trust.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.enableExperiments": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "window.restoreWindows": "none",
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "extensions.autoUpdate": "off",
+  "extensions.ignoreRecommendations": true,
+  "telemetry.telemetryLevel": "off",
+  "chat.disableAIFeatures": true
+}

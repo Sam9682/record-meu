@@ -3,6 +3,7 @@ Demo recorder: automate a scripted demo, record it, export MP4 / GIF.
 
 Targets
     web         a web site in Chromium (chatbot, forms, ...)
+    vscode      VS Code (locally or on WSL), driven like a web page
     powershell  a PowerShell session, rendered as a terminal window
     bash        a bash session, rendered as a terminal window
 
@@ -23,6 +24,7 @@ Run
     python record_demo.py scenarios/x.json --run   # record directly, no menu
 """
 import argparse
+import base64
 import codecs
 import copy
 import ctypes
@@ -52,8 +54,9 @@ VIDEO_DIR = SCRIPT_DIR / "videos"
 CHROMIUM_PATH = r"C:\Program Files\Chromium\Application\chrome.exe"
 HEADLESS = False
 
-WEB, TERMINALS = "web", ("powershell", "bash")
-TARGET_TYPES = (WEB,) + TERMINALS
+WEB, VSCODE, TERMINALS = "web", "vscode", ("powershell", "bash")
+TARGET_TYPES = (WEB, VSCODE) + TERMINALS
+PAGES = {WEB, VSCODE}  # targets driven as a web page through Playwright
 
 # --------------------------------------------------------------------------
 # Scenario schema: (key, label, kind, default, choices)
@@ -61,16 +64,35 @@ TARGET_TYPES = (WEB,) + TERMINALS
 # --------------------------------------------------------------------------
 F = namedtuple("F", "key label kind default choices", defaults=(None,))
 
+CHAT_FIELDS = [
+    F("input_selectors", "Chat input selectors, first visible wins (separated by |)",
+      "list", ["textarea", "input[type=text]", "input:not([type])",
+               "[contenteditable=true]"]),
+    F("send_selector", "Send button selector (empty = press Enter)", "str", ""),
+    F("answer_selector", "Selector of one bot answer (optional)", "str",
+      ".message.assistant"),
+]
+WSL_DISTRO = F("wsl_distro", "WSL distribution (empty = default one)", "str", "")
+
 TARGET_FIELDS = {
     WEB: [
         F("url", "Start URL", "str", "https://opcp-psmc.com:6124/oracle"),
-        F("input_selectors", "Chat input selectors, first visible wins (separated by |)",
-          "list", ["textarea", "input[type=text]", "input:not([type])",
-                   "[contenteditable=true]"]),
-        F("send_selector", "Send button selector (empty = press Enter)", "str", ""),
-        F("answer_selector", "Selector of one bot answer (optional)", "str",
-          ".message.assistant"),
+        *CHAT_FIELDS,
         F("ignore_https_errors", "Ignore HTTPS certificate errors", "bool", True),
+    ],
+    VSCODE: [
+        F("code_path", "VS Code executable: auto | path to Code.exe", "str", "auto"),
+        F("remote", "Open the folder: local | wsl (VS Code Remote - WSL)", "choice",
+          "wsl", ["local", "wsl"]),
+        WSL_DISTRO,
+        F("folder", "Folder to open (Linux path when remote = wsl, empty = none)",
+          "str", ""),
+        F("profile_dir", "Demo VS Code profile (settings + extensions), relative to "
+          "this script", "str", "vscode-demo-profile"),
+        F("uninstall_first", "Extension ids uninstalled before the run, so the demo "
+          "can install them (separated by |)", "list", []),
+        *CHAT_FIELDS,
+        F("close_at_end", "Close VS Code at the end", "bool", True),
     ],
     "terminal": [
         F("cwd", "Working directory (relative to this script)", "str", "."),
@@ -79,7 +101,7 @@ TARGET_FIELDS = {
         F("font_size", "Font size (px)", "int", 16),
         F("shell_exe", "Bash only: auto (first bash in PATH) | wsl | git | path to bash.exe",
           "str", "auto"),
-        F("wsl_distro", "Bash on WSL: distribution (empty = default one)", "str", ""),
+        WSL_DISTRO,
         F("user", "Bash on WSL / Linux: run as this user (empty = default user)", "str", ""),
         F("load_profile", "Load the user's profile (~/.profile + ~/.bashrc / PowerShell "
           "profile): PATH, venv, aliases", "bool", False),
@@ -113,22 +135,30 @@ OUTPUT_FIELDS = [
 HIDE = F("hide", "Hide this step in the final video", "bool", False)
 ALL = set(TARGET_TYPES)
 STEP_TYPES = {
-    "ask": dict(targets={WEB}, help="Type a question in the chat box, send it, "
+    "ask": dict(targets=PAGES, help="Type a question in the chat box, send it, "
                 "wait until the answer is complete", fields=[
         F("text", "Question", "str", "")]),
-    "type": dict(targets={WEB}, help="Type text in a field (login, search...)", fields=[
-        F("selector", "CSS selector of the field", "str", "input[type=text]"),
+    "type": dict(targets=PAGES, help="Type text in a field (login, search...)", fields=[
+        F("selector", "CSS selector of the field (empty = the focused element)", "str",
+          "input[type=text]"),
         F("text", "Text to type", "str", ""),
         F("secret", "Secret: asked at run time, never saved (password)", "bool", False),
         F("press_enter", "Press Enter after typing", "bool", False)]),
-    "click": dict(targets={WEB}, help="Click an element", fields=[
+    "key": dict(targets=PAGES, help="Press a key or a shortcut (Enter, Control+Shift+X...)",
+                fields=[
+        F("keys", "Keys, Playwright syntax, several separated by spaces", "str", "Enter")]),
+    "click": dict(targets=PAGES, help="Click an element", fields=[
         F("selector", "CSS selector to click", "str", "button[type=submit]"),
         F("wait_answer", "Then wait until the page stops changing (AI generation...)",
           "bool", False)]),
     "select": dict(targets={WEB}, help="Choose an option in a drop-down list", fields=[
         F("selector", "CSS selector of the <select>", "str", "select"),
         F("option", "Option to choose (visible text)", "str", "")]),
-    "scroll": dict(targets={WEB}, help="Scroll slowly through an element (or the page), "
+    "wait_for": dict(targets=PAGES, help="Wait until an element is visible (end of an "
+                     "install, page loaded...)", fields=[
+        F("selector", "CSS selector to wait for", "str", ""),
+        F("timeout", "Max seconds to wait", "int", 120)]),
+    "scroll": dict(targets=PAGES, help="Scroll slowly through an element (or the page), "
                    "so viewers can read it", fields=[
         F("selector", "CSS selector of the element (empty = whole page)", "str", ""),
         F("seconds", "Duration of the scroll (s)", "float", 10)]),
@@ -211,7 +241,7 @@ def show_title(page, st):
 
 
 def target_group(target_type):
-    return WEB if target_type == WEB else "terminal"
+    return target_type if target_type in PAGES else "terminal"
 
 
 def step_fields(step_type):
@@ -366,9 +396,13 @@ def describe_step(st):
     if t == "ask":
         s = f'"{short(st["text"])}"'
     elif t == "type":
-        s = f'{st["selector"]} <- ' + ("<secret asked at run time>" if st["secret"]
+        s = f'{st["selector"] or "(focused)"} <- ' + ("<secret asked at run time>" if st["secret"]
                                         else f'"{short(st["text"], 40)}"')
         s += " + Enter" if st["press_enter"] else ""
+    elif t == "key":
+        s = st["keys"]
+    elif t == "wait_for":
+        s = f'{st["selector"]}  (max {st["timeout"]} s)'
     elif t == "click":
         s = st["selector"] + ("  + wait until the page stops changing"
                               if st["wait_answer"] else "")
@@ -402,6 +436,9 @@ def show(sc, path, dirty):
     print(f" Scenario: {path}" + ("   (modified, not saved)" if dirty else ""))
     if t["type"] == WEB:
         print(f" Target  : web  {t['url']}")
+    elif t["type"] == VSCODE:
+        where = f"wsl:{t['wsl_distro'] or 'default'}" if t["remote"] == "wsl" else "local"
+        print(f" Target  : vscode  {where}  {t['folder']}")
     else:
         print(f" Target  : {t['type']}  (cwd: {t['cwd']})")
     o = sc["output"]
@@ -522,7 +559,7 @@ def menu(path):
                     print("  ! usage: i FILE  (one question / command per line, "
                           "# = comment)")
                     continue
-                kind = "ask" if sc["target"]["type"] == WEB else "run"
+                kind = "ask" if sc["target"]["type"] in PAGES else "run"
                 key = "text" if kind == "ask" else "command"
                 n = 0
                 for line in Path(arg.strip('"')).read_text(encoding="utf-8").splitlines():
@@ -651,7 +688,9 @@ def run_scenario(sc):
     stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     base = VIDEO_DIR / f"{sc['output']['name']}_{stamp}"
     raw = base.with_name(base.name + "_raw.webm")
-    runner = run_web if ttype == WEB else run_terminal
+    runner = {WEB: run_web, VSCODE: run_vscode}.get(ttype, run_terminal)
+    if ttype == VSCODE:
+        raw = raw.with_suffix(".mkv")  # encoded live from the DevTools screencast
     print("\n>>> Recording - Ctrl+C stops the scenario and keeps what was recorded\n")
     cuts = runner(sc, secrets, raw)
     if raw.exists():
@@ -695,14 +734,26 @@ def url_matches(page_url, value, target_url):
             and cur.path.rstrip("/").startswith(tgt.path.rstrip("/")))
 
 
-def find_input(page, selectors):
+def search_frames(page, all_frames, skip_main=False):
+    """Frames to look into: the page only, or (VS Code) the webviews first."""
+    if not all_frames:
+        return [page.main_frame]
+    frames = [f for f in page.frames if f != page.main_frame]
+    return frames if skip_main else frames + [page.main_frame]
+
+
+def find_input(page, selectors, all_frames=False, skip_main=False):
     """Return the first visible + enabled chat input locator, or None."""
-    for sel in selectors:
-        loc = page.locator(sel)
-        for i in range(loc.count()):
-            el = loc.nth(i)
-            if el.is_visible() and el.is_enabled():
-                return el
+    for frame in search_frames(page, all_frames, skip_main):
+        for sel in selectors:
+            try:
+                loc = frame.locator(sel)
+                for i in range(loc.count()):
+                    el = loc.nth(i)
+                    if el.is_visible() and el.is_enabled():
+                        return el
+            except PlaywrightError:
+                continue  # frame detached / navigating
     return None
 
 
@@ -715,17 +766,22 @@ def answer_count(page, selector):
         return 0
 
 
-def body_text(page):
-    try:
-        return page.locator("body").inner_text(timeout=5000)
-    except PlaywrightError:
-        return ""
+def body_text(page, all_frames=False):
+    parts = []
+    for frame in search_frames(page, all_frames):
+        try:
+            parts.append(frame.locator("body").inner_text(timeout=5000))
+        except PlaywrightError:
+            pass
+    return "\n".join(parts)
 
 
 def wait_for_answer(page, sc, previous_count, previous_text, scroll=True):
     """Wait until a new answer appears and its text stops changing (streaming done).
-    Uses answer_selector when it matches, otherwise watches the whole page text."""
+    Uses answer_selector when it matches, otherwise watches the whole page text
+    (VS Code: the workbench and its webviews)."""
     tm, sel = sc["timing"], sc["target"]["answer_selector"]
+    all_frames = sc["target"]["type"] == VSCODE
     deadline = time.time() + tm["max_wait_per_answer"]
     use_selector = None
     last_text, stable_since, started = None, time.time(), False
@@ -733,7 +789,7 @@ def wait_for_answer(page, sc, previous_count, previous_text, scroll=True):
         if use_selector is None:
             if answer_count(page, sel) > previous_count:
                 use_selector = True
-            elif body_text(page) != previous_text:
+            elif body_text(page, all_frames) != previous_text:
                 use_selector = answer_count(page, sel) > previous_count
         if use_selector:
             try:
@@ -741,7 +797,7 @@ def wait_for_answer(page, sc, previous_count, previous_text, scroll=True):
             except PlaywrightError:
                 text = ""
         else:
-            text = body_text(page)
+            text = body_text(page, all_frames)
         if text != last_text:
             if last_text is not None:
                 started = True
@@ -755,9 +811,150 @@ def wait_for_answer(page, sc, previous_count, previous_text, scroll=True):
     return False
 
 
-def run_web(sc, secrets, raw):
+def page_executor(sc, secrets, context, state):
+    """Step runner shared by the web and VS Code targets.
+    state["page"] = current page, state["recorded"] = page shown in the video.
+    Returns execute(index, step)."""
     t, tm = sc["target"], sc["timing"]
     delay = tm["typing_delay_ms"]
+    vscode = t["type"] == VSCODE
+
+    def idle():
+        pages = [pg for pg in context.pages if not pg.is_closed()]
+        if pages:
+            pages[0].wait_for_timeout(300)
+        else:
+            time.sleep(0.3)
+
+    def switch_to(pg):
+        if pg is not state["page"]:
+            print(f"    -> continuing in tab {pg.url}")
+        state["page"] = pg
+        pg.bring_to_front()
+
+    def manual(st):
+        print(f"    {st['message']}")
+        if st["until"] == "enter":
+            wait_for_enter("When done:", idle)
+            live = [pg for pg in context.pages if not pg.is_closed()]
+            if state["page"].is_closed() and live:
+                switch_to(live[-1])
+            return
+        timeout = tm["manual_timeout"]
+        deadline = time.time() + timeout if timeout else None
+        matched_since, last_urls = {}, None
+        print("    (waiting automatically" + ("" if vscode else ", every tab is watched") + ")")
+        while True:
+            pages = [state["page"]] if vscode else \
+                [pg for pg in context.pages if not pg.is_closed()]
+            urls = [pg.url for pg in pages]
+            if urls != last_urls and not vscode:
+                print("    open tabs:", urls)
+                last_urls = urls
+            for pg in pages:
+                try:
+                    if st["until"] == "url":
+                        ok = url_matches(pg.url, st["value"], t["url"])
+                    else:
+                        ok = pg.locator(st["value"]).first.is_visible()
+                except PlaywrightError:
+                    ok = False  # page is navigating, retry
+                if not ok:
+                    matched_since.pop(pg, None)
+                    continue
+                # must stay matched 2 s (ignores JS redirects to the login page)
+                if time.time() - matched_since.setdefault(pg, time.time()) >= 2:
+                    switch_to(pg)
+                    return
+            if deadline and time.time() > deadline:
+                raise TimeoutError(f"manual step not completed after {timeout}s")
+            idle()
+
+    def ask(st):
+        page = state["page"]
+        chat_input, end = None, time.time() + 30
+        while not chat_input and time.time() < end:
+            # VS Code: chat UIs are webviews (iframes), the workbench has many other
+            # text fields: look in the webviews only for the first 10 s
+            webviews_only = vscode and time.time() < end - 20
+            chat_input = find_input(page, t["input_selectors"], vscode, webviews_only)
+            if not chat_input:
+                page.wait_for_timeout(500)
+        if not chat_input:
+            print("    ! no chat input found (check input_selectors in 't')")
+            return
+        previous_count = answer_count(page, t["answer_selector"])
+        chat_input.click()
+        chat_input.press_sequentially(st["text"], delay=delay)
+        previous_text = body_text(page, vscode)
+        page.wait_for_timeout(500)
+        if t["send_selector"]:
+            page.click(t["send_selector"])
+        else:
+            chat_input.press("Enter")
+        wait_for_answer(page, sc, previous_count, previous_text, scroll=not vscode)
+        page.wait_for_timeout(tm["pause_after_step"] * 1000)
+
+    def execute(i, st):
+        if not st["hide"] and state["recorded"] is None:
+            state["recorded"] = state["page"]
+        page, kind = state["page"], st["type"]
+        if kind == "manual":
+            manual(st)
+        elif kind == "ask":
+            ask(st)
+        elif kind == "type":
+            text = secrets.get(i, st["text"])
+            if st["selector"]:
+                field = page.locator(st["selector"]).first
+                field.click()
+                field.press_sequentially(text, delay=delay)
+                if st["press_enter"]:
+                    field.press("Enter")
+            else:  # type in the focused element (e.g. after a shortcut)
+                page.keyboard.type(text, delay=delay)
+                if st["press_enter"]:
+                    page.keyboard.press("Enter")
+            page.wait_for_timeout(800)
+        elif kind == "key":
+            for key in st["keys"].split():
+                page.keyboard.press(key)
+                page.wait_for_timeout(300)
+            page.wait_for_timeout(800)
+        elif kind == "click":
+            previous_count = answer_count(page, t["answer_selector"])
+            previous_text = body_text(page, vscode)
+            page.locator(st["selector"]).first.click()
+            if st["wait_answer"]:
+                wait_for_answer(page, sc, previous_count, previous_text, scroll=False)
+            page.wait_for_timeout(800)
+        elif kind == "wait_for":
+            page.locator(st["selector"]).first.wait_for(state="visible",
+                                                        timeout=st["timeout"] * 1000)
+            page.wait_for_timeout(500)
+        elif kind == "select":
+            field = page.locator(st["selector"]).first
+            field.scroll_into_view_if_needed()
+            field.select_option(label=st["option"])
+            page.wait_for_timeout(800)
+        elif kind == "scroll":
+            page.evaluate(SCROLL_JS, [st["selector"], st["seconds"] * 1000])
+            page.wait_for_timeout(tm["pause_after_step"] * 1000)
+        elif kind == "goto":
+            page.goto(st["url"])
+        elif kind == "title":
+            show_title(page, st)
+        elif kind == "wait":
+            page.wait_for_timeout(st["seconds"] * 1000)
+        if state["recorded"] is not None and state["page"] is not state["recorded"]:
+            print("    ! the demo moved to another tab: only the first tab "
+                  "is in the video")
+
+    return execute
+
+
+def run_web(sc, secrets, raw):
+    t = sc["target"]
     created = {}  # page -> time its video started
 
     with sync_playwright() as p:
@@ -765,118 +962,7 @@ def run_web(sc, secrets, raw):
         context.on("page", lambda pg: created.setdefault(pg, time.time()))
         state = {"page": context.new_page(), "recorded": None}
         created.setdefault(state["page"], time.time())
-
-        def idle():
-            pages = [pg for pg in context.pages if not pg.is_closed()]
-            if pages:
-                pages[0].wait_for_timeout(300)
-            else:
-                time.sleep(0.3)
-
-        def switch_to(pg):
-            if pg is not state["page"]:
-                print(f"    -> continuing in tab {pg.url}")
-            state["page"] = pg
-            pg.bring_to_front()
-
-        def manual(st):
-            print(f"    {st['message']}")
-            if st["until"] == "enter":
-                wait_for_enter("When done:", idle)
-                live = [pg for pg in context.pages if not pg.is_closed()]
-                if state["page"].is_closed() and live:
-                    switch_to(live[-1])
-                return
-            timeout = tm["manual_timeout"]
-            deadline = time.time() + timeout if timeout else None
-            matched_since, last_urls = {}, None
-            print("    (waiting automatically, every tab is watched)")
-            while True:
-                pages = [pg for pg in context.pages if not pg.is_closed()]
-                urls = [pg.url for pg in pages]
-                if urls != last_urls:
-                    print("    open tabs:", urls)
-                    last_urls = urls
-                for pg in pages:
-                    try:
-                        if st["until"] == "url":
-                            ok = url_matches(pg.url, st["value"], t["url"])
-                        else:
-                            ok = pg.locator(st["value"]).first.is_visible()
-                    except PlaywrightError:
-                        ok = False  # page is navigating, retry
-                    if not ok:
-                        matched_since.pop(pg, None)
-                        continue
-                    # must stay matched 2 s (ignores JS redirects to the login page)
-                    if time.time() - matched_since.setdefault(pg, time.time()) >= 2:
-                        switch_to(pg)
-                        return
-                if deadline and time.time() > deadline:
-                    raise TimeoutError(f"manual step not completed after {timeout}s")
-                idle()
-
-        def ask(st):
-            page = state["page"]
-            chat_input, end = None, time.time() + 30
-            while not chat_input and time.time() < end:
-                chat_input = find_input(page, t["input_selectors"])
-                if not chat_input:
-                    page.wait_for_timeout(500)
-            if not chat_input:
-                print("    ! no chat input found (check input_selectors in 't')")
-                return
-            previous_count = answer_count(page, t["answer_selector"])
-            chat_input.click()
-            chat_input.press_sequentially(st["text"], delay=delay)
-            previous_text = body_text(page)
-            page.wait_for_timeout(500)
-            if t["send_selector"]:
-                page.click(t["send_selector"])
-            else:
-                chat_input.press("Enter")
-            wait_for_answer(page, sc, previous_count, previous_text)
-            page.wait_for_timeout(tm["pause_after_step"] * 1000)
-
-        def execute(i, st):
-            if not st["hide"] and state["recorded"] is None:
-                state["recorded"] = state["page"]
-            page, kind = state["page"], st["type"]
-            if kind == "manual":
-                manual(st)
-            elif kind == "ask":
-                ask(st)
-            elif kind == "type":
-                field = page.locator(st["selector"]).first
-                field.click()
-                field.press_sequentially(secrets.get(i, st["text"]), delay=delay)
-                if st["press_enter"]:
-                    field.press("Enter")
-                page.wait_for_timeout(800)
-            elif kind == "click":
-                previous_count = answer_count(page, t["answer_selector"])
-                previous_text = body_text(page)
-                page.locator(st["selector"]).first.click()
-                if st["wait_answer"]:
-                    wait_for_answer(page, sc, previous_count, previous_text, scroll=False)
-                page.wait_for_timeout(800)
-            elif kind == "select":
-                field = page.locator(st["selector"]).first
-                field.scroll_into_view_if_needed()
-                field.select_option(label=st["option"])
-                page.wait_for_timeout(800)
-            elif kind == "scroll":
-                page.evaluate(SCROLL_JS, [st["selector"], st["seconds"] * 1000])
-                page.wait_for_timeout(tm["pause_after_step"] * 1000)
-            elif kind == "goto":
-                page.goto(st["url"])
-            elif kind == "title":
-                show_title(page, st)
-            elif kind == "wait":
-                page.wait_for_timeout(st["seconds"] * 1000)
-            if state["recorded"] is not None and state["page"] is not state["recorded"]:
-                print("    ! the demo moved to another tab: only the first tab "
-                      "is in the video")
+        execute = page_executor(sc, secrets, context, state)
 
         segments = []
         try:
@@ -898,6 +984,258 @@ def run_web(sc, secrets, raw):
             if f != raw and f.name.endswith(".webm") and not f.name.endswith("_raw.webm"):
                 f.unlink(missing_ok=True)
         t0 = created.get(recorded, segments[0].start if segments else 0)
+        return compute_cuts(t0, segments)
+
+
+# --------------------------------------------------------------------------
+# VS Code target (Electron window driven over the DevTools protocol)
+# --------------------------------------------------------------------------
+# Settings of the demo profile, written once (edit the file afterwards):
+# no welcome page, trust prompt, tips, release notes, Copilot chat...
+DEMO_VSCODE_SETTINGS = {
+    "security.workspace.trust.enabled": False,
+    "workbench.startupEditor": "none",
+    "workbench.tips.enabled": False,
+    "workbench.enableExperiments": False,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "window.restoreWindows": "none",
+    "update.mode": "none",
+    "update.showReleaseNotes": False,
+    "extensions.autoUpdate": False,
+    "extensions.ignoreRecommendations": True,
+    "telemetry.telemetryLevel": "off",
+    "chat.disableAIFeatures": True,
+}
+
+
+def find_code_exe(path):
+    if path and path.lower() != "auto":
+        return path if Path(path).exists() else None
+    candidates = []
+    cli = shutil.which("code")  # ...\Microsoft VS Code\bin\code.cmd
+    if cli:
+        candidates.append(Path(cli).resolve().parent.parent / "Code.exe")
+    if os.environ.get("LOCALAPPDATA"):
+        candidates.append(Path(os.environ["LOCALAPPDATA"]) / "Programs" /
+                          "Microsoft VS Code" / "Code.exe")
+    if os.environ.get("ProgramFiles"):
+        candidates.append(Path(os.environ["ProgramFiles"]) / "Microsoft VS Code" / "Code.exe")
+    return next((str(c) for c in candidates if c.exists()), None)
+
+
+def vscode_env():
+    """Environment without the variables of a VS Code we may be running in."""
+    return {k: v for k, v in os.environ.items()
+            if not k.startswith("VSCODE_") and k != "ELECTRON_RUN_AS_NODE"}
+
+
+def code_cli(exe, ext_dir, *args):
+    cli = Path(exe).parent / "bin" / ("code.cmd" if os.name == "nt" else "code")
+    return subprocess.run([str(cli), "--extensions-dir", str(ext_dir), *args],
+                          capture_output=True, text=True, env=vscode_env(), timeout=300)
+
+
+def print_output(r):
+    out = ((r.stdout or "") + (r.stderr or "")).strip()
+    if out:
+        print("    | " + out.replace("\n", "\n    | "))
+
+
+def prepare_vscode(t, exe, profile):
+    """Demo profile (settings, Remote - WSL extension), extensions to uninstall.
+    Returns (user data dir, extensions dir)."""
+    data, ext_dir = profile / "data", profile / "extensions"
+    settings = data / "User" / "settings.json"
+    if not settings.exists():
+        settings.parent.mkdir(parents=True, exist_ok=True)
+        settings.write_text(json.dumps(DEMO_VSCODE_SETTINGS, indent=2), encoding="utf-8")
+        print(f"    demo VS Code profile created in {profile}")
+    ext_dir.mkdir(parents=True, exist_ok=True)
+    if t["remote"] == "wsl" and not any(ext_dir.glob("ms-vscode-remote.remote-wsl-*")):
+        print("    installing the Remote - WSL extension in the demo profile...")
+        print_output(code_cli(exe, ext_dir, "--install-extension",
+                              "ms-vscode-remote.remote-wsl"))
+    ids = [e for e in t["uninstall_first"] if e]
+    if ids:
+        print(f"    uninstalling {', '.join(ids)} (the demo installs it again)")
+        if t["remote"] == "wsl":
+            # all VS Code servers of the distribution share ~/.vscode-server/extensions
+            script = ('for s in ~/.vscode-server/bin/*/bin/code-server '
+                      '~/.vscode-server/cli/servers/*/server/bin/code-server; do '
+                      '[ -x "$s" ] || continue; for e in "$@"; do '
+                      '"$s" --uninstall-extension "$e"; done; break; done')
+            distro = ["-d", t["wsl_distro"]] if t["wsl_distro"] else []
+            print_output(subprocess.run(["wsl.exe", *distro, "-e", "bash", "-c", script,
+                                         "_", *ids],
+                                        capture_output=True, text=True, timeout=300))
+        else:
+            print_output(code_cli(exe, ext_dir, *[a for e in ids
+                                                  for a in ("--uninstall-extension", e)]))
+    return data, ext_dir
+
+
+def free_port():
+    import socket
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
+
+
+def launch_vscode(p, sc):
+    """Start VS Code with a DevTools port and connect Playwright to its window.
+    Returns (process, browser, workbench page)."""
+    t, o = sc["target"], sc["output"]
+    exe = find_code_exe(t["code_path"])
+    if not exe:
+        raise RuntimeError("VS Code not found (set 'code_path' in the target)")
+    profile = Path(t["profile_dir"] or "vscode-demo-profile")
+    profile = profile if profile.is_absolute() else SCRIPT_DIR / profile
+    data, ext_dir = prepare_vscode(t, exe, profile)
+    port = free_port()
+    args = [exe, f"--remote-debugging-port={port}", f"--user-data-dir={data}",
+            f"--extensions-dir={ext_dir}", "--new-window", "--skip-welcome",
+            "--skip-release-notes", "--disable-workspace-trust"]
+    if t["folder"]:
+        if t["remote"] == "wsl":
+            distro = t["wsl_distro"] or subprocess.run(
+                ["wsl.exe", "-e", "sh", "-c", "echo $WSL_DISTRO_NAME"],
+                capture_output=True, text=True, timeout=120).stdout.strip()
+            folder = "/" + t["folder"].lstrip("/")
+            args += ["--folder-uri", f"vscode-remote://wsl+{distro}{folder}"]
+        else:
+            args.append(t["folder"])
+    print(f"    starting {' '.join(args)}")
+    proc = subprocess.Popen(args, env=vscode_env(), stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL)
+    browser, deadline = None, time.time() + 90
+    while not browser:
+        try:
+            browser = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
+        except PlaywrightError:
+            if time.time() > deadline or proc.poll() is not None:
+                close_vscode(proc)
+                raise RuntimeError("could not connect to VS Code (is another VS Code "
+                                   "already using this profile_dir?)")
+            time.sleep(1)
+    page = None
+    while not page:  # the workbench window, not the shared / utility processes
+        page = next((pg for ctx in browser.contexts for pg in ctx.pages
+                     if "workbench" in pg.url), None)
+        if not page:
+            if time.time() > deadline:
+                raise RuntimeError("VS Code window not found")
+            time.sleep(0.5)
+    page.locator(".monaco-workbench").first.wait_for(timeout=60000)
+    resize_window(page, o["width"], o["height"])
+    return proc, browser, page
+
+
+def resize_window(page, width, height):
+    """Best effort: give the window the size of the video (sharpest result)."""
+    try:
+        cdp = page.context.new_cdp_session(page)
+        win = cdp.send("Browser.getWindowForTarget")["windowId"]
+        cdp.send("Browser.setWindowBounds", {"windowId": win,
+                                             "bounds": {"windowState": "normal"}})
+        cdp.send("Browser.setWindowBounds", {"windowId": win, "bounds": {
+            "left": 40, "top": 40, "width": width, "height": height}})
+        cdp.detach()
+    except PlaywrightError as e:
+        print(f"    ! could not resize the VS Code window: {short(e, 150)}")
+
+
+class ScreencastRecorder:
+    """Record a window Playwright did not open (VS Code) through the DevTools
+    screencast. ffmpeg encodes it live at a constant frame rate: the last frame
+    is repeated while the screen does not change."""
+
+    def __init__(self, page, out_path, width, height, fps=25):
+        ffmpeg = find_ffmpeg()
+        if not ffmpeg:
+            raise RuntimeError("ffmpeg is needed to record VS Code "
+                               "(winget install ffmpeg, or pip install imageio-ffmpeg)")
+        self.fps, self.frame, self.t0 = fps, None, None
+        self.stopped = threading.Event()
+        vf = (f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
+              f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,format=yuv420p")
+        self.proc = subprocess.Popen(
+            [ffmpeg, "-hide_banner", "-loglevel", "error", "-y",
+             "-f", "image2pipe", "-c:v", "mjpeg", "-framerate", str(fps), "-i", "-",
+             "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+             str(out_path)], stdin=subprocess.PIPE)
+        self.cdp = page.context.new_cdp_session(page)
+        self.cdp.on("Page.screencastFrame", self._on_frame)
+        self.cdp.send("Page.startScreencast", {"format": "jpeg", "quality": 90,
+                                               "maxWidth": width, "maxHeight": height})
+        self.thread = threading.Thread(target=self._writer, daemon=True)
+        self.thread.start()
+
+    def _on_frame(self, params):
+        self.frame = base64.b64decode(params["data"])
+        if self.t0 is None:
+            self.t0 = time.time()
+        try:
+            self.cdp.send("Page.screencastFrameAck", {"sessionId": params["sessionId"]})
+        except PlaywrightError:
+            pass
+
+    def _writer(self):
+        written = 0
+        while not self.stopped.is_set():
+            if self.t0 is not None:
+                due = int((time.time() - self.t0) * self.fps) + 1
+                try:
+                    while written < due:
+                        self.proc.stdin.write(self.frame)
+                        written += 1
+                except OSError:
+                    return
+            time.sleep(0.5 / self.fps)
+
+    def stop(self):
+        try:
+            self.cdp.send("Page.stopScreencast")
+        except PlaywrightError:
+            pass
+        self.stopped.set()
+        self.thread.join(timeout=5)
+        try:
+            self.proc.stdin.close()
+        except OSError:
+            pass
+        self.proc.wait(timeout=120)
+
+
+def close_vscode(proc):
+    if proc.poll() is not None:
+        return
+    if os.name == "nt":  # the whole tree: renderers, extension host...
+        subprocess.run(["taskkill", "/PID", str(proc.pid), "/T", "/F"],
+                       capture_output=True)
+    else:
+        proc.terminate()
+
+
+def run_vscode(sc, secrets, raw):
+    o = sc["output"]
+    with sync_playwright() as p:
+        proc, browser, page = launch_vscode(p, sc)
+        state = {"page": page, "recorded": None}
+        execute = page_executor(sc, secrets, page.context, state)
+        recorder, segments, t0 = None, [], None
+        try:
+            recorder = ScreencastRecorder(page, raw, o["width"], o["height"])
+            segments = run_steps(sc, execute)
+        finally:
+            if recorder:
+                recorder.stop()
+                t0 = recorder.t0
+            browser.close()  # only disconnects from VS Code
+            if sc["target"]["close_at_end"]:
+                close_vscode(proc)
+        if t0 is None:
+            raw.unlink(missing_ok=True)
+            return []
         return compute_cuts(t0, segments)
 
 

@@ -1,0 +1,45 @@
+2026-11-27 15:37:40.404 [info] [node-compile-cache] main: packaged cache enabled (status: enabled, configured: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\main, active: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\main\v24.21.0-x64-c3a7e8f2)
+2026-11-27 15:37:40.406 [info] StorageMainService: creating application shared storage
+2026-11-27 15:37:40.408 [info] [shared storage] Creating shared storage database at 'c:\Users\slepetre\.vscode-shared\sharedStorage\state.vscdb' (wasCreated: false)
+2026-11-27 15:37:40.410 [info] [shared storage] Initializing fallback application storage (path: \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User\globalStorage\state.vscdb)
+2026-11-27 15:37:40.571 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User')
+2026-11-27 15:37:40.619 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User\settings.json for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User\settings.json')
+2026-11-27 15:37:42.127 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:42.131 [error] [storage state.vscdb] open(): Unable to open DB due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:42.252 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:42.255 [error] [storage state.vscdb] open(): Unable to open DB due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:45.934 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:45.960 [error] [storage state.vscdb] open(): Unable to open DB due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:46.057 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:46.067 [error] [storage state.vscdb] open(): Unable to open DB due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:46.123 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User')
+2026-11-27 15:37:47.796 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:47.839 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User\settings.json for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\data\User\settings.json')
+2026-11-27 15:37:47.841 [error] [storage state.vscdb] open(): Unable to use backup due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:47.860 [info] [shared storage] Fallback application storage initialized with 3 items
+2026-11-27 15:37:48.259 [info] update#disable - updates are disabled by user preference
+2026-11-27 15:37:48.261 [info] update#setState disabled
+2026-11-27 15:37:48.277 [error] [storage state.vscdb] exec(): Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:48.312 [error] [storage state.vscdb] open(): Unable to use backup due to Error: SQLITE_BUSY: database is locked
+2026-11-27 15:37:48.533 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\extensions for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\extensions')
+2026-11-27 15:37:48.602 [error] [File Watcher (node.js)] Failed to watch \\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\extensions\extensions.json for changes using fs.watch() (Error: EISDIR: illegal operation on a directory, watch '\\wsl.localhost\Ubuntu-24.04\home\slepetre\workspace\github\record-meu\vscode-demo-profile\extensions\extensions.json')
+2026-11-27 15:37:53.260 [error] Error: Error while decrypting the ciphertext provided to safeStorage.decryptString.
+    at Ic.decrypt (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:47:19775)
+    at Object.call (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:34:5575)
+    at Nu.onPromise (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:32:15451)
+    at Nu.onRawMessage (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:32:14874)
+    at gl.value (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:32:14140)
+    at b._deliver (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3617)
+    at b._deliverQueue (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3706)
+    at b.fire (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:4040)
+    at gl.value (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:29:6002)
+    at b._deliver (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3617)
+    at b.fire (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3935)
+    at gl.value (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:29:6196)
+    at b._deliver (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3617)
+    at b.fire (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:31:3935)
+    at re (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:29:9599)
+    at IpcMainImpl.t (file:///C:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/mainImpl.js:37:11290)
+    at IpcMainImpl.emit (node:events:514:28)
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:119845)
+    at Session.emit (node:events:514:28)
