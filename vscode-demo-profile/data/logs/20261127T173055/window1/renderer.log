@@ -1,0 +1,457 @@
+2026-11-27 17:30:55.817 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:30:55.824 [info] [AgentHost:remote] Initializing (remoteAuthority=wsl+Ubuntu-24.04)
+2026-11-27 17:30:56.131 [info] Started local extension host with pid 12600.
+2026-11-27 17:30:56.512 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-11-27 17:30:56.694 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): agentSessionsWorkspace
+agentsWindowConfiguration
+chatDebug
+chatHooks
+envIsConnectionMetered
+extensionsAny
+newSymbolNamesProvider
+interactive
+codeActionAI
+activeComment
+commentReveal
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+documentFiltersExclusive
+embeddings
+findTextInFiles
+findTextInFiles2
+languageModelToolSupportsModel
+findFiles2
+textSearchProvider
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+chatParticipantAdditions
+defaultChatParticipant
+contribSourceControlInputBoxMenu
+authLearnMore
+authIssuers
+testObserver
+aiTextSearchProvider
+chatParticipantPrivate
+chatProvider
+contribDebugCreateConfiguration
+chatReferenceDiagnostic
+textSearchProvider2
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelPricing
+inlineCompletionsAdditions
+chatStatusItem
+chatInputNotification
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+languageModelThinkingPart
+chatSessionsProvider
+devDeviceId
+contribEditorContentMenu
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+environmentPower
+terminalTitle
+toolInvocationApproveCombination
+chatSessionCustomizationProvider
+product.json (WINS): agentSessionsWorkspace
+agentsWindowConfiguration
+interactive
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+chatParticipantAdditions
+defaultChatParticipant
+embeddings
+chatProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+codeActionAI
+findTextInFiles
+findTextInFiles2
+textSearchProvider
+textSearchProvider2
+activeComment
+commentReveal
+contribSourceControlInputBoxMenu
+contribCommentEditorActionsMenu
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+extensionAffinity
+newSymbolNamesProvider
+findFiles2
+chatReferenceDiagnostic
+extensionsAny
+authLearnMore
+testObserver
+aiTextSearchProvider
+documentFiltersExclusive
+chatParticipantPrivate
+contribDebugCreateConfiguration
+inlineCompletionsAdditions
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelThinkingPart
+languageModelToolSupportsModel
+chatStatusItem
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+chatSessionsProvider
+chatSessionCustomizationProvider
+devDeviceId
+contribEditorContentMenu
+tokenInformation
+toolInvocationApproveCombination
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+chatHooks
+chatDebug
+envIsConnectionMetered
+environmentPower
+terminalTitle
+languageModelPricing
+chatInputNotification
+DELTA: authIssuers
+2026-11-27 17:30:56.827 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:30:57.029 [warning] Authentication provider github was not declared in the Extension Manifest.
+2026-11-27 17:30:57.032 [warning] Authentication provider github-enterprise was not declared in the Extension Manifest.
+2026-11-27 17:30:57.080 [info] Invoking resolveAuthority(wsl)...
+2026-11-27 17:30:57.080 [info] [LocalProcess0][resolveAuthority(wsl,1)][0ms] obtaining proxy...
+2026-11-27 17:30:57.087 [info] [LocalProcess0][resolveAuthority(wsl,1)][8ms] invoking...
+2026-11-27 17:30:57.134 [warning] [CloudSandboxApi] No 'github' session with scopes [read:user, user:email, repo, workflow]
+2026-11-27 17:30:58.092 [info] [LocalProcess0][resolveAuthority(wsl,1)][1012ms] waiting...
+2026-11-27 17:30:59.091 [info] [LocalProcess0][resolveAuthority(wsl,1)][2011ms] waiting...
+2026-11-27 17:31:00.095 [info] [LocalProcess0][resolveAuthority(wsl,1)][3015ms] waiting...
+2026-11-27 17:31:01.095 [info] [LocalProcess0][resolveAuthority(wsl,1)][4015ms] waiting...
+2026-11-27 17:31:01.523 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-11-27 17:31:02.095 [info] [LocalProcess0][resolveAuthority(wsl,1)][5016ms] waiting...
+2026-11-27 17:31:03.090 [info] [LocalProcess0][resolveAuthority(wsl,1)][6011ms] waiting...
+2026-11-27 17:31:04.095 [info] [LocalProcess0][resolveAuthority(wsl,1)][7016ms] waiting...
+2026-11-27 17:31:05.091 [info] [LocalProcess0][resolveAuthority(wsl,1)][8012ms] waiting...
+2026-11-27 17:31:06.095 [info] [LocalProcess0][resolveAuthority(wsl,1)][9015ms] waiting...
+2026-11-27 17:31:07.090 [info] [LocalProcess0][resolveAuthority(wsl,1)][10011ms] waiting...
+2026-11-27 17:31:08.094 [info] [LocalProcess0][resolveAuthority(wsl,1)][11015ms] waiting...
+2026-11-27 17:31:09.092 [info] [LocalProcess0][resolveAuthority(wsl,1)][12013ms] waiting...
+2026-11-27 17:31:10.094 [info] [LocalProcess0][resolveAuthority(wsl,1)][13016ms] waiting...
+2026-11-27 17:31:11.094 [info] [LocalProcess0][resolveAuthority(wsl,1)][14015ms] waiting...
+2026-11-27 17:31:12.087 [info] [LocalProcess0][resolveAuthority(wsl,1)][15008ms] waiting...
+2026-11-27 17:31:13.094 [info] [LocalProcess0][resolveAuthority(wsl,1)][16015ms] waiting...
+2026-11-27 17:31:14.090 [info] [LocalProcess0][resolveAuthority(wsl,1)][17011ms] waiting...
+2026-11-27 17:31:15.086 [info] [LocalProcess0][resolveAuthority(wsl,1)][18008ms] waiting...
+2026-11-27 17:31:16.093 [info] [LocalProcess0][resolveAuthority(wsl,1)][19015ms] waiting...
+2026-11-27 17:31:17.094 [info] [LocalProcess0][resolveAuthority(wsl,1)][20016ms] waiting...
+2026-11-27 17:31:18.092 [info] [LocalProcess0][resolveAuthority(wsl,1)][21014ms] waiting...
+2026-11-27 17:31:19.100 [info] [LocalProcess0][resolveAuthority(wsl,1)][22015ms] waiting...
+2026-11-27 17:31:19.223 [error] [LocalProcess0][resolveAuthority(wsl,1)][22062ms] returned an error {"code":"NotAvailable","message":"VS Code Server for WSL closed unexpectedly.","detail":true}
+2026-11-27 17:31:19.224 [error] resolveAuthority(wsl) returned an error after 22063 ms VS Code Server for WSL closed unexpectedly.
+2026-11-27 17:31:19.225 [error] Error received from starting extension host (kind: Remote)
+2026-11-27 17:31:19.225 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.226 [error] [remote-connection][attempt 1] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:31:19.226 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.227 [error] [remote-connection][attempt 2] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:31:19.228 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.228 [error] [remote-connection][attempt 3] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:31:19.228 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.266 [error] [remote-connection][attempt 4] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:31:19.268 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.271 [error] [remote-connection][attempt 5]  An error occurred in initial connection! It will be treated as a permanent error. Error:
+2026-11-27 17:31:19.272 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.273 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.274 [warning] Error getting remote process MCP environment VS Code Server for WSL closed unexpectedly.
+2026-11-27 17:31:19.275 [error] Cannot register remote filesystem provider. Error while fetching remote environment. VS Code Server for WSL closed unexpectedly.
+2026-11-27 17:31:19.275 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.277 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.278 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.278 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.282 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.289 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.301 [warning] Ignoring the error while validating workspace folder vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu - ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu'
+2026-11-27 17:31:19.301 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.302 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.302 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.302 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.303 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.304 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.305 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.exists (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:90816)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:841:24315
+    at async Promise.all (index 0)
+    at async WKe._initWorkspaceFolderSnippets (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:841:24480)
+2026-11-27 17:31:19.306 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents'
+2026-11-27 17:31:19.307 [warning] Failed to get installed servers from vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.mcp.json ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.mcp.json'
+2026-11-27 17:31:19.308 [warning] Failed to get installed servers from vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.vscode/mcp.json ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.vscode/mcp.json'
+2026-11-27 17:31:19.309 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.310 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.313 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents'
+2026-11-27 17:31:19.320 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:31:19.339 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-11-27 17:31:19.341 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.342 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doResolveFile (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:89262)
+    at async fSe.resolve (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:89107)
+    at async rWt.findWorkspaces (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5352:9660)
+2026-11-27 17:31:19.342 [error] CodeExpectedError: Remote profiles service not available in the current window
+    at pyt.getRemoteProfile (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:772:20096)
+    at async nat.getProfileLocation (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5424:15141)
+    at async nat.getInstalled (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5424:13274)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5400:62802
+    at async Promise.all (index 1)
+    at async nBt.getInstalled (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5400:62751)
+2026-11-27 17:31:19.487 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents'
+2026-11-27 17:31:19.488 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents'
+2026-11-27 17:31:19.555 [error] CodeExpectedError: VS Code Server for WSL closed unexpectedly.
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:31:19.855 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:31:20.006 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): agentSessionsWorkspace
+agentsWindowConfiguration
+chatDebug
+chatHooks
+envIsConnectionMetered
+extensionsAny
+newSymbolNamesProvider
+interactive
+codeActionAI
+activeComment
+commentReveal
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+documentFiltersExclusive
+embeddings
+findTextInFiles
+findTextInFiles2
+languageModelToolSupportsModel
+findFiles2
+textSearchProvider
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+chatParticipantAdditions
+defaultChatParticipant
+contribSourceControlInputBoxMenu
+authLearnMore
+authIssuers
+testObserver
+aiTextSearchProvider
+chatParticipantPrivate
+chatProvider
+contribDebugCreateConfiguration
+chatReferenceDiagnostic
+textSearchProvider2
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelPricing
+inlineCompletionsAdditions
+chatStatusItem
+chatInputNotification
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+languageModelThinkingPart
+chatSessionsProvider
+devDeviceId
+contribEditorContentMenu
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+environmentPower
+terminalTitle
+toolInvocationApproveCombination
+chatSessionCustomizationProvider
+product.json (WINS): agentSessionsWorkspace
+agentsWindowConfiguration
+interactive
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+chatParticipantAdditions
+defaultChatParticipant
+embeddings
+chatProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+codeActionAI
+findTextInFiles
+findTextInFiles2
+textSearchProvider
+textSearchProvider2
+activeComment
+commentReveal
+contribSourceControlInputBoxMenu
+contribCommentEditorActionsMenu
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+extensionAffinity
+newSymbolNamesProvider
+findFiles2
+chatReferenceDiagnostic
+extensionsAny
+authLearnMore
+testObserver
+aiTextSearchProvider
+documentFiltersExclusive
+chatParticipantPrivate
+contribDebugCreateConfiguration
+inlineCompletionsAdditions
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelThinkingPart
+languageModelToolSupportsModel
+chatStatusItem
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+chatSessionsProvider
+chatSessionCustomizationProvider
+devDeviceId
+contribEditorContentMenu
+tokenInformation
+toolInvocationApproveCombination
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+chatHooks
+chatDebug
+envIsConnectionMetered
+environmentPower
+terminalTitle
+languageModelPricing
+chatInputNotification
+DELTA: authIssuers
+2026-11-27 17:31:20.229 [info] Started local extension host with pid 26768.
+2026-11-27 17:31:20.497 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-11-27 17:31:20.799 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:31:20.868 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-11-27 17:31:20.884 [warning] [CloudSandboxApi] No 'github' session with scopes [read:user, user:email, repo, workflow]
+2026-11-27 17:31:22.599 [info] [perf] Render performance baseline is 28ms
+2026-11-27 17:31:25.440 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false

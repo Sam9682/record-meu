@@ -1,0 +1,8 @@
+2026-11-27 17:32:22.464 [info] [node-compile-cache] main: packaged cache enabled (status: enabled, configured: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\main, active: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\main\v24.21.0-x64-c3a7e8f2)
+2026-11-27 17:32:22.468 [info] StorageMainService: creating application shared storage
+2026-11-27 17:32:22.699 [info] [shared storage] Creating shared storage database at 'c:\Users\slepetre\.vscode-shared\sharedStorage\state.vscdb' (wasCreated: false)
+2026-11-27 17:32:22.700 [info] [shared storage] Initializing fallback application storage (path: c:\Users\slepetre\tools\record-meu\vscode-demo-profile\data\User\globalStorage\state.vscdb)
+2026-11-27 17:32:22.777 [info] [shared storage] Fallback application storage initialized with 80 items
+2026-11-27 17:32:23.223 [info] update#disable - updates are disabled by user preference
+2026-11-27 17:32:23.223 [info] update#setState disabled
+2026-11-27 17:33:07.009 [info] Extension host with pid 20872 exited with code: 0, signal: unknown.

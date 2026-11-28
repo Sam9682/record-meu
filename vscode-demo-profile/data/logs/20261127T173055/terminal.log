@@ -1,0 +1,1 @@
+2026-11-27 17:31:19.355 [warning] Exception occurred during terminal shutdown [{"name":"CodeExpectedError","_message":"VS Code Server for WSL closed unexpectedly.","_code":"NotAvailable","_detail":true,"isHandled":true}]

@@ -1041,6 +1041,17 @@ def print_output(r):
         print("    | " + out.replace("\n", "\n    | "))
 
 
+def fix_line_endings(ext_dir):
+    """The Remote - WSL extension runs its scripts/*.sh inside Linux: with CRLF
+    line endings (git core.autocrlf on a committed profile) they fail with
+    "/usr/bin/env: 'sh\\r'" and VS Code only says "WSL Daemon exited with code 0"."""
+    for script in ext_dir.glob("ms-vscode-remote.remote-wsl-*/scripts/*.sh"):
+        content = script.read_bytes()
+        if b"\r\n" in content:
+            script.write_bytes(content.replace(b"\r\n", b"\n"))
+            print(f"    fixed CRLF line endings in {script.name}")
+
+
 def prepare_vscode(t, exe, profile):
     """Demo profile (settings, Remote - WSL extension), extensions to uninstall.
     Returns (user data dir, extensions dir)."""
@@ -1055,6 +1066,8 @@ def prepare_vscode(t, exe, profile):
         print("    installing the Remote - WSL extension in the demo profile...")
         print_output(code_cli(exe, ext_dir, "--install-extension",
                               "ms-vscode-remote.remote-wsl"))
+    if t["remote"] == "wsl":
+        fix_line_endings(ext_dir)
     ids = [e for e in t["uninstall_first"] if e]
     if ids:
         print(f"    uninstalling {', '.join(ids)} (the demo installs it again)")

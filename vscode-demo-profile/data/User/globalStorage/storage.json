@@ -58,7 +58,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 300,
+            "sideBarWidth": 291,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 28,
             "windowBorder": false,
@@ -69,7 +69,7 @@
                     "top": 35,
                     "left": 4,
                     "width": 44,
-                    "height": 685,
+                    "height": 833,
                     "outerEdges": {
                         "left": true,
                         "right": false,
@@ -80,8 +80,8 @@
                 "sideBar": {
                     "top": 35,
                     "left": 48,
-                    "width": 300,
-                    "height": 685,
+                    "width": 291,
+                    "height": 833,
                     "outerEdges": {
                         "left": false,
                         "right": false,
@@ -89,16 +89,28 @@
                         "bottom": true
                     }
                 },
+                "panel": {
+                    "top": 576,
+                    "left": 343,
+                    "width": 818,
+                    "height": 292,
+                    "outerEdges": {
+                        "left": false,
+                        "right": true,
+                        "top": false,
+                        "bottom": true
+                    }
+                },
                 "editor": {
                     "top": 35,
-                    "left": 352,
-                    "width": 924,
-                    "height": 685,
+                    "left": 343,
+                    "width": 818,
+                    "height": 537,
                     "outerEdges": {
                         "left": false,
                         "right": true,
                         "top": true,
-                        "bottom": true
+                        "bottom": false
                     }
                 }
             }
@@ -106,7 +118,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 300,
+            "sideBarWidth": 291,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "491399e608def8075f6f7b77d4887bfd": {
@@ -119,14 +131,14 @@
     "windowsState": {
         "lastActiveWindow": {
             "folder": "vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu",
-            "backupPath": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\slepetre\\workspace\\github\\record-meu\\vscode-demo-profile\\data\\Backups\\8fe46ada7e8d7ee79d412543e3724d51",
+            "backupPath": "C:\\Users\\slepetre\\tools\\record-meu\\vscode-demo-profile\\data\\Backups\\8fe46ada7e8d7ee79d412543e3724d51",
             "remoteAuthority": "wsl+Ubuntu-24.04",
             "uiState": {
                 "mode": 1,
-                "x": -80,
-                "y": 0,
-                "width": 1167,
-                "height": 901
+                "x": 1616,
+                "y": -343,
+                "width": 1165,
+                "height": 900
             }
         },
         "openedWindows": []

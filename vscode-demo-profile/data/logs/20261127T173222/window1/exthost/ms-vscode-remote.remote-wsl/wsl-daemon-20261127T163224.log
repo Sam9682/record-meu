@@ -1,0 +1,303 @@
+[2026-11-27 16:32:24.984] WSL daemon log file: c:\Users\slepetre\tools\record-meu\vscode-demo-profile\data\logs\20261127T173222\window1\exthost\ms-vscode-remote.remote-wsl\wsl-daemon-20261127T163224.log
+[2026-11-27 16:32:24.990] Probing if server is already installed: if [ -d ~/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593 ]; then printf 'install-found '; fi; if [ -f /etc/alpine-release ]; then printf 'alpine-'; fi; uname -m;
+[2026-11-27 16:32:24.990] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e sh -c if [ -d ~/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593 ]; then printf 'install-found '; fi; if [ -f /etc/alpine-release ]; then printf 'alpine-'; fi; uname -m;
+[2026-11-27 16:32:25.369] Probing result: install-found x86_64
+[2026-11-27 16:32:25.369] Server install found in WSL
+[2026-11-27 16:32:25.370] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 sh -c 'env && VSCODE_WSL_DEBUG_INFO=true "$VSCODE_WSL_EXT_LOCATION/scripts/wslServer.sh" 7baac39ec3ca969dab74ac12c097f6a486e46593 stable code-server .vscode-server --host=127.0.0.1 --port=0 --connection-token=2918744911-1836563013-494736385-1664913284 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --log=trace --disable-telemetry --telemetry-level=off'
+[2026-11-27 16:32:25.406] Running with cwd: undefined, env: {
+  "AI_AGENT": "claude-code_2-1-332_agent",
+  "ALLUSERSPROFILE": "C:\\ProgramData",
+  "APPDATA": "C:\\Users\\slepetre\\AppData\\Roaming",
+  "CLAUDECODE": "1",
+  "CLAUDE_CODE_CHILD_NOTES_DIR": "C:\\Users\\slepetre\\AppData\\Local\\Temp\\claude\\0dcf9e0f44996796\\f8287969-a443-43da-a590-ede38a06984a\\started",
+  "CLAUDE_CODE_CHILD_SESSION": "1",
+  "CLAUDE_CODE_ENTRYPOINT": "cli",
+  "CLAUDE_CODE_MESSAGING_SOCKET": "\\\\.\\pipe\\LOCAL\\cc-msg-c86ad1bd41360bff1915a9305b4f6782",
+  "CLAUDE_CODE_MESSAGING_TOKEN": "9a8cb705038e159b52f6a37efb79e716",
+  "CLAUDE_CODE_SESSION_ATTENDED": "1",
+  "CLAUDE_CODE_SESSION_ID": "f8287969-a443-43da-a590-ede38a06984a",
+  "CLAUDE_PID": "25968",
+  "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+  "COMMONPROGRAMFILES(X86)": "C:\\Program Files (x86)\\Common Files",
+  "COMMONPROGRAMW6432": "C:\\Program Files\\Common Files",
+  "COMPUTERNAME": "LWI5CG549103J",
+  "COMSPEC": "C:\\windows\\system32\\cmd.exe",
+  "COREPACK_ENABLE_AUTO_PIN": "0",
+  "DRIVERDATA": "C:\\Windows\\System32\\Drivers\\DriverData",
+  "EFC_4164_1262719628": "1",
+  "EFC_4164_1592913036": "1",
+  "EFC_4164_2283032206": "1",
+  "EFC_4164_3789132940": "1",
+  "EFC_4164_4126798990": "0",
+  "GCM_INTERACTIVE": "never",
+  "GIT_EDITOR": "true",
+  "GIT_TERMINAL_PROMPT": "0",
+  "HOMEDRIVE": "C:",
+  "HOMEPATH": "\\Users\\slepetre",
+  "LOCALAPPDATA": "C:\\Users\\slepetre\\AppData\\Local",
+  "LOGIN8": "slepetre",
+  "LOGONSERVER": "\\\\LWI5CG549103J",
+  "NODEFAULTCURRENTDIRECTORYINEXEPATH": "1",
+  "NO_COLOR": "1",
+  "NUMBER_OF_PROCESSORS": "14",
+  "ONEDRIVE": "C:\\Users\\slepetre\\OneDrive",
+  "OS": "Windows_NT",
+  "PATH": "C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\windows\\system32\\config\\systemprofile\\AppData\\Roaming\\npm;C:\\Program Files\\Serge-Desktop\\locales;C:\\Program Files\\Serge-Desktop\\resources;C:\\Program Files\\Serge-Desktop\\resources\\bin;C:\\Program Files\\Serge-Desktop\\resources\\images;C:\\Program Files\\Serge-Desktop\\resources\\skills;C:\\Program Files\\Serge-Desktop\\resources\\images\\loading-serge-desktop;C:\\Program Files\\Serge-Desktop\\resources\\skills\\design-ui-mockup;C:\\Program Files\\Serge-Desktop\\resources\\skills\\explain-code;C:\\Program Files\\Serge-Desktop\\resources\\skills\\mkdocs-writer;C:\\Program Files\\Serge-Desktop\\resources\\skills\\ovh-tech-advisor;C:\\Program Files\\Serge-Desktop\\resources\\skills\\skill-creator;C:\\Program Files\\Serge-Desktop\\resources\\skills\\design-ui-mock;C:\\Program Files\\VSCodium\\bin;C:\\Users\\slepetre\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\slepetre\\AppData\\Local\\Programs\\Kiro\\bin;C:\\Users\\slepetre\\AppData\\Local\\Kiro-Cli\\;C:\\Users\\slepetre\\.local\\bin;C:\\Users\\slepetre\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.1-full_build\\bin;",
+  "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+  "PROCESSOR_ARCHITECTURE": "AMD64",
+  "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+  "PROCESSOR_LEVEL": "6",
+  "PROCESSOR_REVISION": "b500",
+  "PROGRAMDATA": "C:\\ProgramData",
+  "PROGRAMFILES": "C:\\Program Files",
+  "PROGRAMFILES(X86)": "C:\\Program Files (x86)",
+  "PROGRAMW6432": "C:\\Program Files",
+  "PROMPT": "$P$G",
+  "PSEXECUTIONPOLICYPREFERENCE": "Bypass",
+  "PSMODULEPATH": "C:\\Users\\slepetre\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+  "PUBLIC": "C:\\Users\\Public",
+  "PYTHONIOENCODING": "utf-8:surrogateescape",
+  "SESSIONNAME": "Console",
+  "SSH_BASTION_KEY_LOCATION": "C:\\Users\\slepetre\\.ssh\\id_ed25519",
+  "SYSTEMDRIVE": "C:",
+  "SYSTEMROOT": "C:\\windows",
+  "TEMP": "C:\\Users\\slepetre\\AppData\\Local\\Temp",
+  "TMP": "C:\\Users\\slepetre\\AppData\\Local\\Temp",
+  "USERDOMAIN": "LWI5CG549103J",
+  "USERDOMAIN_ROAMINGPROFILE": "LWI5CG549103J",
+  "USERNAME": "slepetre",
+  "USERPROFILE": "C:\\Users\\slepetre",
+  "WINDIR": "C:\\windows",
+  "VSCODE_WSL_EXT_LOCATION": "c:\\Users\\slepetre\\tools\\record-meu\\vscode-demo-profile\\extensions\\ms-vscode-remote.remote-wsl-1.104.7",
+  "WSLENV": "VSCODE_WSL_EXT_LOCATION/up"
+}
+[2026-11-27 16:32:25.712] USER=slepetre
+VSCODE_WSL_EXT_LOCATION=/mnt/c/Users/slepetre/tools/record-meu/vscode-demo-profile/extensions/ms-vscode-remote.remote-wsl-1.104.7
+SHLVL=0
+HOME=/home/slepetre
+WSL_DISTRO_NAME=Ubuntu-24.04
+WAYLAND_DISPLAY=wayland-0
+LOGNAME=slepetre
+NAME=LWI5CG549103J
+WSL_INTEROP=/run/WSL/11001_interop
+PULSE_SERVER=unix:/mnt/wslg/PulseServer
+_=/usr/bin/sh
+TERM=xterm-256color
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/config/systemprofile/AppData/Roaming/npm:/mnt/c/Program Files/Serge-Desktop/locales:/mnt/c/Program Files/Serge-Desktop/resources:/mnt/c/Program Files/Serge-Desktop/resources/bin:/mnt/c/Program Files/Serge-Desktop/resources/images:/mnt/c/Program Files/Serge-Desktop/resources/skills:/mnt/c/Program Files/Serge-Desktop/resources/images/loading-serge-desktop:/mnt/c/Program Files/Serge-Desktop/resources/skills/design-ui-mockup:/mnt/c/Program Files/Serge-Desktop/resources/skills/explain-code:/mnt/c/Program Files/Serge-Desktop/resources/skills/mkdocs-writer:/mnt/c/Program Files/Serge-Desktop/resources/skills/ovh-tech-advisor:/mnt/c/Program Files/Serge-Desktop/resources/skills/skill-creator:/mnt/c/Program Files/Serge-Desktop/resources/skills/design-ui-mock:/mnt/c/Program Files/VSCodium/bin:/mnt/c/Users/slepetre/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/slepetre/AppData/Local/Programs/Kiro/bin:/mnt/c/Users/slepetre/AppData/Local/Kiro-Cli/:/mnt/c/Users/slepetre/.local/bin:/mnt/c/Users/slepetre/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.1-full_build/bin
+XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+DISPLAY=:0
+LANG=C.UTF-8
+SHELL=/bin/bash
+PWD=/mnt/c/Program Files/Microsoft VS Code
+WSL2_GUI_APPS_ENABLED=1
+HOSTTYPE=x86_64
+WSLENV=VSCODE_WSL_EXT_LOCATION/up
+Setting up server environment: Looking for /home/slepetre/.vscode-server/server-env-setup. Not found.
+WSL version: 6.6.87.2-microsoft-standard-WSL2 Ubuntu-24.04
+Network mode: nat
+WSL-shell-PID: 11004
+Node executable: /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node
+Starting server: /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/bin/code-server --host=127.0.0.1 --port=0 --connection-token=2918744911-1836563013-494736385-1664913284 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --log=trace --disable-telemetry --telemetry-level=off
+
+[2026-11-27 16:32:25.713] + CODE_PROFILE=/home/slepetre/.vscode-server/server-env-setup
++ printf Setting up server environment: Looking for %s.  /home/slepetre/.vscode-server/server-env-setup
++ [ -f /home/slepetre/.vscode-server/server-env-setup ]
++ echo Not found.
++ VSCODE_REMOTE_BIN=/home/slepetre/.vscode-server/bin
++ uname -r
++ WSL_VERSION=6.6.87.2-microsoft-standard-WSL2
++ echo WSL version: 6.6.87.2-microsoft-standard-WSL2 Ubuntu-24.04
++ [ -x /usr/bin/wslinfo ]
++ printf Network mode: 
++ /usr/bin/wslinfo --networking-mode
++ dirname /mnt/c/Users/slepetre/tools/record-meu/vscode-demo-profile/extensions/ms-vscode-remote.remote-wsl-1.104.7/scripts/wslServer.sh
++ /mnt/c/Users/slepetre/tools/record-meu/vscode-demo-profile/extensions/ms-vscode-remote.remote-wsl-1.104.7/scripts/wslDownload.sh 7baac39ec3ca969dab74ac12c097f6a486e46593 stable /home/slepetre/.vscode-server/bin
++ [ ! -d /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593 ]
++ RC=0
++ [ 0 -ne 0 ]
++ echo WSL-shell-PID: 11004
++ echo Node executable: /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node
++ echo Starting server: /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/bin/code-server --host=127.0.0.1 --port=0 --connection-token=2918744911-1836563013-494736385-1664913284 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --log=trace --disable-telemetry --telemetry-level=off
++ [ -f /etc/alpine-release ]
++ uname -m
++ [ x86_64 = aarch64 ]
++ /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/bin/code-server --host=127.0.0.1 --port=0 --connection-token=2918744911-1836563013-494736385-1664913284 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --log=trace --disable-telemetry --telemetry-level=off
+
+[2026-11-27 16:32:26.020] *
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to 127.0.0.1:37321 (IPv4)
+Extension host agent listening on 37321
+
+[17:32:25] Remote configuration data at /home/slepetre/.vscode-server
+[17:32:25] process arguments: {
+  _: [],
+  host: '127.0.0.1',
+  port: '0',
+  'connection-token': '<redacted>',
+  'without-connection-token': false,
+  'disable-websocket-compression': true,
+  'print-startup-performance': false,
+  'print-ip-address': false,
+  'accept-server-license-terms': true,
+  'telemetry-level': 'off',
+  'enable-smoke-test-driver': false,
+  'disable-telemetry': true,
+  'disable-experiments': false,
+  'disable-workspace-trust': false,
+  log: [ 'trace' ],
+  'force-disable-user-env': false,
+  'enable-sync': false,
+  'use-test-resolver': false,
+  'update-extensions': false,
+  'list-extensions': false,
+  'show-versions': false,
+  force: false,
+  'do-not-sync': false,
+  'do-not-include-pack-dependencies': false,
+  'pre-release': false,
+  'start-server': false,
+  'enable-remote-auto-shutdown': false,
+  'remote-auto-shutdown-without-delay': false,
+  'use-host-proxy': true,
+  'without-browser-env-var': true,
+  help: false,
+  version: false,
+  'user-data-dir': '/home/slepetre/.vscode-server/data',
+  'builtin-extensions-dir': '/home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/extensions',
+  'extensions-dir': '/home/slepetre/.vscode-server/extensions',
+  logsPath: '/home/slepetre/.vscode-server/data/logs/20261127T173225'
+}
+[17:32:25] 
+
+
+
+
+[17:32:25] [File Watcher (node.js)] Request to start watching: /home/slepetre/.vscode-server/data/Machine (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>),/home/slepetre/.vscode-server/data/Machine/settings.json (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>)
+[17:32:25] [File Watcher (node.js)] ignoring a path for watching who's stat info failed to resolve: /home/slepetre/.vscode-server/data/Machine/settings.json (error: Error: ENOENT: no such file or directory, stat '/home/slepetre/.vscode-server/data/Machine/settings.json')
+[17:32:25] [File Watcher (node.js)] starting fs.watchFile() on /home/slepetre/.vscode-server/data/Machine/settings.json (correlationId: undefined)
+[reconnection-grace-time] No CLI argument provided, using default: 10800000ms (10800s)
+[17:32:25] [AgentHostChannel] Registered lazy IPC channel 'agentHostProxy' (upstream: /mnt/wslg/runtime-dir/vscode-ipc-88d89c30-bcdb-45dc-8035-c7d5f20aa8c4.sock)
+[17:32:25] ExtensionManagementService#cleanUp
+[17:32:25] ExtensionManagementService#removeTempDeleteFolders
+[17:32:25] Extension host agent started.
+[17:32:26] Started scanning system extensions
+[17:32:26] [File Watcher (node.js)] Started watching: '/home/slepetre/.vscode-server/data/Machine'
+[17:32:26] [File Watcher (node.js)] Request to start watching: /home/slepetre/.vscode-server/extensions (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>)
+[17:32:26] [File Watcher (node.js)] Request to stop watching: /home/slepetre/.vscode-server/data/Machine/settings.json (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>)
+[17:32:26] [File Watcher (node.js)] stopping file watcher (/home/slepetre/.vscode-server/data/Machine/settings.json (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>))
+[17:32:26] [File Watcher (node.js)] Request to start watching: /home/slepetre/.vscode-server/extensions/extensions.json (excludes: <none>, includes: <all>, filter: <none>, correlationId: <none>)
+
+[2026-11-27 16:32:26.099] Started local proxy server on 61176.
+[2026-11-27 16:32:26.152] Using executable (0) to forward requests from local 61176 to remote 37321
+[2026-11-27 16:32:26.152] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node -e const net = require('net'); process.stdin.pause(); const client = net.createConnection({ host: '127.0.0.1', port: 37321 }, () => { client.pipe(process.stdout); process.stdin.pipe(client); }); client.on('close', function (hadError) { console.error(hadError ? 'Remote close with error' : 'Remote close'); process.exit(hadError ? 1 : 0); }); client.on('error', function (err) { process.stderr.write(err && (err.stack || err.message) || String(err)); });
+[2026-11-27 16:32:26.389] Using executable (1) to forward requests from local 61176 to remote 37321
+[2026-11-27 16:32:26.390] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node -e const net = require('net'); process.stdin.pause(); const client = net.createConnection({ host: '127.0.0.1', port: 37321 }, () => { client.pipe(process.stdout); process.stdin.pipe(client); }); client.on('close', function (hadError) { console.error(hadError ? 'Remote close with error' : 'Remote close'); process.exit(hadError ? 1 : 0); }); client.on('error', function (err) { process.stderr.write(err && (err.stack || err.message) || String(err)); });
+[2026-11-27 16:32:26.922] Using executable (2) to forward requests from local 61176 to remote 37321
+[2026-11-27 16:32:26.922] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node -e const net = require('net'); process.stdin.pause(); const client = net.createConnection({ host: '127.0.0.1', port: 37321 }, () => { client.pipe(process.stdout); process.stdin.pipe(client); }); client.on('close', function (hadError) { console.error(hadError ? 'Remote close with error' : 'Remote close'); process.exit(hadError ? 1 : 0); }); client.on('error', function (err) { process.stderr.write(err && (err.stack || err.message) || String(err)); });
+[2026-11-27 16:32:26.946] Using executable (3) to forward requests from local 61176 to remote 37321
+[2026-11-27 16:32:26.946] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e /home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/node -e const net = require('net'); process.stdin.pause(); const client = net.createConnection({ host: '127.0.0.1', port: 37321 }, () => { client.pipe(process.stdout); process.stdin.pipe(client); }); client.on('close', function (hadError) { console.error(hadError ? 'Remote close with error' : 'Remote close'); process.exit(hadError ? 1 : 0); }); client.on('error', function (err) { process.stderr.write(err && (err.stack || err.message) || String(err)); });
+[2026-11-27 16:32:33.339] Exec (2) stderr: Remote close
+
+[2026-11-27 16:32:33.367] Exec (2) has terminated  with status 0 and message undefined.
+[2026-11-27 16:32:35.517] Exec (2): Local close
+[2026-11-27 16:32:41.526] Exec (3) stderr: Remote close
+
+[2026-11-27 16:32:41.550] Exec (3) has terminated  with status 0 and message undefined.
+[2026-11-27 16:33:06.975] Exec (0) stderr: Remote close
+
+[2026-11-27 16:33:07.007] Exec (0) has terminated  with status 0 and message undefined.
+[2026-11-27 16:33:07.007] Exec (0): Local close
+[2026-11-27 16:33:07.131] Exec (1) stderr: Remote close
+
+[2026-11-27 16:33:07.133] Unhandled exception: Error: Connection is closed.
+[2026-11-27 16:33:07.181] Exec (1): Local close
+[2026-11-27 16:33:07.181] Unhandled exception: Error: Connection is closed.
+[2026-11-27 16:33:07.203] Exec (1) has terminated  with status 0 and message undefined.
+[2026-11-27 16:33:07.203] Exec (1) has errored: Error: Connection is closed.
+[2026-11-27 16:33:07.204] Unhandled rejection: Error: Connection is closed.
+[2026-11-27 16:33:07.314] Exec (3): Local close
+[2026-11-27 16:33:07.314] Unhandled exception: Error: Connection is closed.
+[2026-11-27 16:33:07.377] No more customers => exit
+[2026-11-27 16:33:07.377] Result available, waiting 3 sec before exiting
+[2026-11-27 16:33:10.382] Exiting daemon
+[2026-11-27 16:33:10.383] NodeExecServer run: C:\windows\System32\wsl.exe -d Ubuntu-24.04 -e kill 11004
+[2026-11-27 16:33:10.561] [17:32:26] [File Watcher (node.js)] Started watching: '/home/slepetre/.vscode-server/extensions'
+[17:32:26] Using cached extensions scan result system file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/extensions
+[17:32:26] Scanned system extensions: 35
+[17:32:26] [File Watcher (node.js)] Started watching: '/home/slepetre/.vscode-server/extensions/extensions.json'
+[17:32:26] ComputeTargetPlatform: linux-x64
+[17:32:26] No extensions are marked as removed.
+[17:32:26] [127.0.0.1][cbdf530a][ManagementConnection] New connection established.
+[17:32:26] [reconnection-grace-time] Server sending grace time to client: 10800000ms (10800s)
+[17:32:26] [Marketplace] Setting manifest available
+[17:32:26] Started scanning system extensions
+[17:32:26] Started scanning user extensions wa {
+  scheme: 'file',
+  authority: '',
+  path: '/home/slepetre/.vscode-server/extensions/extensions.json',
+  query: '',
+  fragment: '',
+  _formatted: 'file:///home/slepetre/.vscode-server/extensions/extensions.json',
+  _fsPath: '/home/slepetre/.vscode-server/extensions/extensions.json'
+}
+[17:32:26] Started scanning user extensions wa {
+  scheme: 'file',
+  authority: '',
+  path: '/home/slepetre/.vscode-server/extensions/extensions.json',
+  query: '',
+  fragment: '',
+  _formatted: 'file:///home/slepetre/.vscode-server/extensions/extensions.json',
+  _fsPath: '/home/slepetre/.vscode-server/extensions/extensions.json'
+}
+[17:32:26] ExtensionManagementService.updateControlCache
+[17:32:26] AbstractMcpResourceManagementService#populateLocalServers file:///home/slepetre/.vscode-server/data/User/mcp.json
+[17:32:26] PtyHostService#_startPtyHost 
+    at Xu._startPtyHost (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:88:3947)
+    at Xu._ensurePtyHost (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:88:3288)
+    at get _proxy (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:88:3176)
+    at Xu.setTerminalLayoutInfo (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:88:7455)
+    at EC.call (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:226:96017)
+    at FI.onPromise (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:69:36977)
+    at FI.onRawMessage (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:69:36400)
+    at Ed.value (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:69:35666)
+    at T._deliver (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3618)
+    at T._deliverQueue (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3707)
+    at T.fire (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:4041)
+    at Pc.fire (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:72:42139)
+    at Jg._receiveMessage (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:72:47041)
+    at Ed.value (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:72:44345)
+    at T._deliver (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3618)
+    at T.fire (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3936)
+    at JI.acceptChunk (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:72:39943)
+    at Ed.value (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:72:39076)
+    at T._deliver (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3618)
+    at T.fire (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:28:3936)
+    at PR._processReadQueue (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:79:7628)
+    at PR.acceptFrame (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:79:7288)
+    at zs._acceptChunk (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:79:4948)
+    at file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:79:3257
+    at Socket.e (file:///home/slepetre/.vscode-server/bin/7baac39ec3ca969dab74ac12c097f6a486e46593/out/server-main.js:79:1538)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:568:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:519:3)
+    at Readable.push (node:internal/streams/readable:399:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+[17:32:26] Log level changed to info
+[17:32:27] [127.0.0.1][c0c3268a][ExtensionHostConnection] New connection established.
+[17:32:27] [127.0.0.1][c0c3268a][ExtensionHostConnection] Starting extension host process...
+[17:32:27] [127.0.0.1][c0c3268a][ExtensionHostConnection] <11114> Launched Extension Host Process.
+[17:32:28] [127.0.0.1][c0c3268a][ExtensionHostConnection] <11114> [reconnection-grace-time] Extension host: read VSCODE_RECONNECTION_GRACE_TIME=10800000ms (10800s)
+
+[17:33:06] [127.0.0.1][cbdf530a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:33:07] [127.0.0.1][c0c3268a][ExtensionHostConnection] <11114> Extension Host Process exited with code: 0, signal: null.
+
+[2026-11-27 16:33:10.562] (node:11014) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Terminated
+
+[2026-11-27 16:33:10.684] Exiting daemon complete

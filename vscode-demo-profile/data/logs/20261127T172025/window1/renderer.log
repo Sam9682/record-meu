@@ -1,0 +1,420 @@
+2026-11-27 17:20:26.851 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:20:26.859 [info] [AgentHost:remote] Initializing (remoteAuthority=wsl+Ubuntu-24.04)
+2026-11-27 17:20:27.250 [info] Started local extension host with pid 21224.
+2026-11-27 17:20:27.424 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-11-27 17:20:27.587 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-11-27 17:20:27.781 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): agentSessionsWorkspace
+agentsWindowConfiguration
+chatDebug
+chatHooks
+envIsConnectionMetered
+extensionsAny
+newSymbolNamesProvider
+interactive
+codeActionAI
+activeComment
+commentReveal
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+documentFiltersExclusive
+embeddings
+findTextInFiles
+findTextInFiles2
+languageModelToolSupportsModel
+findFiles2
+textSearchProvider
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+chatParticipantAdditions
+defaultChatParticipant
+contribSourceControlInputBoxMenu
+authLearnMore
+authIssuers
+testObserver
+aiTextSearchProvider
+chatParticipantPrivate
+chatProvider
+contribDebugCreateConfiguration
+chatReferenceDiagnostic
+textSearchProvider2
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelPricing
+inlineCompletionsAdditions
+chatStatusItem
+chatInputNotification
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+languageModelThinkingPart
+chatSessionsProvider
+devDeviceId
+contribEditorContentMenu
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+environmentPower
+terminalTitle
+toolInvocationApproveCombination
+chatSessionCustomizationProvider
+product.json (WINS): agentSessionsWorkspace
+agentsWindowConfiguration
+interactive
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+chatParticipantAdditions
+defaultChatParticipant
+embeddings
+chatProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+codeActionAI
+findTextInFiles
+findTextInFiles2
+textSearchProvider
+textSearchProvider2
+activeComment
+commentReveal
+contribSourceControlInputBoxMenu
+contribCommentEditorActionsMenu
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+extensionAffinity
+newSymbolNamesProvider
+findFiles2
+chatReferenceDiagnostic
+extensionsAny
+authLearnMore
+testObserver
+aiTextSearchProvider
+documentFiltersExclusive
+chatParticipantPrivate
+contribDebugCreateConfiguration
+inlineCompletionsAdditions
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelThinkingPart
+languageModelToolSupportsModel
+chatStatusItem
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+chatSessionsProvider
+chatSessionCustomizationProvider
+devDeviceId
+contribEditorContentMenu
+tokenInformation
+toolInvocationApproveCombination
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+chatHooks
+chatDebug
+envIsConnectionMetered
+environmentPower
+terminalTitle
+languageModelPricing
+chatInputNotification
+DELTA: authIssuers
+2026-11-27 17:20:28.155 [warning] Authentication provider github was not declared in the Extension Manifest.
+2026-11-27 17:20:28.159 [warning] Authentication provider github-enterprise was not declared in the Extension Manifest.
+2026-11-27 17:20:28.232 [info] Invoking resolveAuthority(wsl)...
+2026-11-27 17:20:28.233 [info] [LocalProcess0][resolveAuthority(wsl,1)][0ms] obtaining proxy...
+2026-11-27 17:20:28.241 [info] [LocalProcess0][resolveAuthority(wsl,1)][7ms] invoking...
+2026-11-27 17:20:28.282 [warning] [CloudSandboxApi] No 'github' session with scopes [read:user, user:email, repo, workflow]
+2026-11-27 17:20:29.243 [info] [LocalProcess0][resolveAuthority(wsl,1)][1009ms] waiting...
+2026-11-27 17:20:30.242 [info] [LocalProcess0][resolveAuthority(wsl,1)][2008ms] waiting...
+2026-11-27 17:20:31.241 [info] [LocalProcess0][resolveAuthority(wsl,1)][3008ms] waiting...
+2026-11-27 17:20:32.241 [info] [LocalProcess0][resolveAuthority(wsl,1)][4008ms] waiting...
+2026-11-27 17:20:32.425 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-11-27 17:20:32.480 [error] [LocalProcess0][resolveAuthority(wsl,1)][4247ms] returned an error {"code":"NotAvailable","message":"WSL Daemon exited with code 0","detail":true}
+2026-11-27 17:20:32.481 [error] resolveAuthority(wsl) returned an error after 4249 ms WSL Daemon exited with code 0
+2026-11-27 17:20:32.482 [error] Error received from starting extension host (kind: Remote)
+2026-11-27 17:20:32.482 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.482 [error] [remote-connection][attempt 1] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:20:32.483 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.483 [error] [remote-connection][attempt 2] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:20:32.483 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.486 [error] [remote-connection][attempt 3] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:20:32.486 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.610 [error] [remote-connection][attempt 4] An error occurred in initial connection! Will retry... Error:
+2026-11-27 17:20:32.611 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.614 [error] [remote-connection][attempt 5]  An error occurred in initial connection! It will be treated as a permanent error. Error:
+2026-11-27 17:20:32.615 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.617 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.621 [warning] Error getting remote process MCP environment WSL Daemon exited with code 0
+2026-11-27 17:20:32.622 [error] Cannot register remote filesystem provider. Error while fetching remote environment. WSL Daemon exited with code 0
+2026-11-27 17:20:32.623 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.624 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.624 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.625 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.630 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.638 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.651 [warning] Ignoring the error while validating workspace folder vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu - ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu'
+2026-11-27 17:20:32.652 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.652 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.653 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.654 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.655 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.656 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.657 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.exists (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:90816)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:841:24315
+    at async Promise.all (index 0)
+    at async WKe._initWorkspaceFolderSnippets (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:841:24480)
+2026-11-27 17:20:32.658 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents'
+2026-11-27 17:20:32.659 [warning] Failed to get installed servers from vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.mcp.json ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.mcp.json'
+2026-11-27 17:20:32.663 [warning] Failed to get installed servers from vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.vscode/mcp.json ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.vscode/mcp.json'
+2026-11-27 17:20:32.664 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.666 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.667 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents'
+2026-11-27 17:20:32.679 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doWatch (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101368)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:101058
+2026-11-27 17:20:32.705 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-11-27 17:20:32.710 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.716 [error] CodeExpectedError
+    at fSe.withProvider (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:88487)
+    at async fSe.doResolveFile (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:89262)
+    at async fSe.resolve (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5390:89107)
+    at async rWt.findWorkspaces (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5352:9660)
+2026-11-27 17:20:32.717 [error] CodeExpectedError: Remote profiles service not available in the current window
+    at pyt.getRemoteProfile (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:772:20096)
+    at async nat.getProfileLocation (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5424:15141)
+    at async nat.getInstalled (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5424:13274)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5400:62802
+    at async Promise.all (index 1)
+    at async nBt.getInstalled (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5400:62751)
+2026-11-27 17:20:32.901 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:32.903 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.github/agents'
+2026-11-27 17:20:32.903 [error] Failed to resolve files at location: vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents ENOPRO: No file system provider found for resource 'vscode-remote://wsl%2Bubuntu-24.04/home/slepetre/workspace/github/record-meu/.claude/agents'
+2026-11-27 17:20:33.038 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:35.391 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:35.507 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:35.515 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:35.611 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:37.510 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:39.523 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:39.789 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:41.530 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:52.631 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:55.526 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:20:55.535 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:13.127 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:13.136 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:16.274 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:18.223 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:27.663 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:33.670 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:33.673 [error] Error: Failed to get remote environment for remote authority "wsl+Ubuntu-24.04"
+    at Cit.getBackendOS (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:4184:392)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:4184:24669
+2026-11-27 17:21:34.147 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:35.558 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:55.443 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:21:55.451 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:22:00.011 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657
+2026-11-27 17:22:04.153 [error] CodeExpectedError: WSL Daemon exited with code 0
+    at FBt._resolveAuthorityOnExtensionHosts (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:22621)
+    at async FBt._resolveAuthorityWithLogging (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5437:21866)
+    at async FBt._doResolveExtensions (vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:5447:4968)
+    at async vscode-file://vscode-app/c:/Program%20Files/Microsoft%20VS%20Code/7baac39ec3/resources/app/out/vs/workbench/workbench.desktop.main.js:31:91657

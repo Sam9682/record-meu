@@ -1,0 +1,1 @@
+2026-11-27 17:23:43.771 [warning] Exception occurred during terminal shutdown [{"name":"CodeExpectedError","_message":"WSL Daemon exited with code 0","_code":"NotAvailable","_detail":true,"isHandled":true}]

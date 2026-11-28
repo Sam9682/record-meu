@@ -1,0 +1,15 @@
+2026-11-27 17:32:24.135 [info] Extension host with pid 20872 started
+2026-11-27 17:32:24.135 [info] Skipping acquiring lock for c:\Users\slepetre\tools\record-meu\vscode-demo-profile\data\User\workspaceStorage\491399e608def8075f6f7b77d4887bfd.
+2026-11-27 17:32:24.135 [info] $getCanonicalURI invoked for authority (wsl)
+2026-11-27 17:32:24.142 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-11-27 17:32:24.160 [info] ExtensionService#_doActivateExtension ms-vscode-remote.remote-wsl, startup: false, activationEvent: 'onResolveRemoteAuthority:wsl'
+2026-11-27 17:32:24.443 [info] [resolveAuthority(wsl,1)][0ms] activating remote resolvers wsl+Ubuntu-24.04
+2026-11-27 17:32:24.445 [info] [resolveAuthority(wsl,1)][2ms] activating resolver for wsl+Ubuntu-24.04...
+2026-11-27 17:32:24.446 [info] [resolveAuthority(wsl,1)][2ms] invoking final resolve()...
+2026-11-27 17:32:25.446 [info] [resolveAuthority(wsl,1)][1003ms] waiting...
+2026-11-27 17:32:26.105 [info] [resolveAuthority(wsl,1)][1661ms] setting tunnel factory...
+2026-11-27 17:32:26.106 [info] [resolveAuthority(wsl,1)][1662ms] returned 127.0.0.1:61176
+2026-11-27 17:32:26.975 [info] Eager extensions activated
+2026-11-27 17:32:26.975 [info] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\extension-host, active: C:\Program Files\Microsoft VS Code\7baac39ec3\resources\app\node-compile-cache\extension-host\v24.21.0-x64-c3a7e8f2)
+2026-11-27 17:33:07.006 [info] Extension host terminating: received terminate message from renderer
+2026-11-27 17:33:07.007 [info] Extension host with pid 20872 exiting with code 0

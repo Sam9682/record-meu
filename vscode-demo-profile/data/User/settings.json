@@ -10,5 +10,11 @@
   "extensions.autoUpdate": "off",
   "extensions.ignoreRecommendations": true,
   "telemetry.telemetryLevel": "off",
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal",
+    "kilo-code.new.agentManager.previousTerminal",
+    "kilo-code.new.agentManager.nextTerminal"
+  ]
 }
